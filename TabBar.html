@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./TabBar.css">
+
+</head>
+
+<body>
+    <div id="outer_box">
+        <div class="slide_box">
+            <div class="slide_bar">
+                <a href="#bar_a" class="active">测试1</a>
+                <a href="#bar_b">测试2</a>
+                <a href="#bar_c">测试3</a>
+                <a href="#bar_d">测试4</a>
+                <a href="#bar_e">测试5</a>
+                <a href="#bar_f">测试6</a>
+                <a href="#bar_g">测试7</a>
+            </div>
+            <div class="slide_bar_icon">
+                <img src="./img/Shape.png" alt="">
+            </div>
+        </div>
+        <div class="slide_bottom">
+            <div id="bar_a" style="display:block">
+                1
+            </div>
+            <div id="bar_b" style="display:none">
+                2
+            </div>
+            <div id="bar_c" style="display:none">
+                3
+            </div>
+            <div id="bar_d" style="display:none">
+                4
+            </div>
+            <div id="bar_e" style="display:none">
+                5
+            </div>
+            <div id="bar_f" style="display:none">
+                6
+            </div>
+            <div id="bar_g" style="display:none">
+                7
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('.slide_bar a').on('click', function () {
+                $(this).addClass('active').siblings().removeClass('active')
+                let ids = $(this).attr('href');
+                $(`${ids}`).show().siblings().hide();
+            })
+        })
+    </script>
+</body>
+
+</html>
