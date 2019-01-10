@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <!-- 优秀 -->
     <div id="outer_box">
         <div class="slide_box">
             <div class="slide_bar">
@@ -53,11 +54,17 @@
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(function () {
-            $('.slide_bar a').on('click', function () {
-                $(this).addClass('active').siblings().removeClass('active')
-                let ids = $(this).attr('href');
-                $(`${ids}`).show().siblings().hide();
-            })
+            class Init {
+                cut() {
+                    $('.slide_bar a').on('click', function () {
+                        $(this).addClass('active').siblings().removeClass('active')
+                        let ids = $(this).attr('href');
+                        $(`${ids}`).show().siblings().hide();
+                    })
+                }
+            }
+            const init = new Init()
+            init.cut()
         })
     </script>
 </body>
